@@ -1,0 +1,6 @@
+ID,title,content,seq,book_ID
+1,Clean Code and Why It Matters,contentText1,1,1
+2,Meaningful Names,contentText2,2,1
+3,Functions,contentText3,3,1
+4,A Pragmatic Philosophy,contentText4,1,2
+5,A Pragmatic Approach,contentText5,2,2

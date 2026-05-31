@@ -1,0 +1,162 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Books Expand author Association
+# @name Books_GET
+GET {{server}}/odata/v4/catalog/Books?$expand=author
+Authorization: Basic {{username}}:{{password}}
+
+
+### Books Expand author Association
+### Books Expand chapters Composition
+# @name Books_GET
+GET {{server}}/odata/v4/catalog/Books?$expand=author,chapters
+Authorization: Basic {{username}}:{{password}}
+
+### Books
+# @name Books_POST
+POST {{server}}/odata/v4/catalog/Books
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 16752649,
+  "title": "title-16752649",
+  "price": 4401861.24,
+  "author": {
+    "ID": 3
+  },
+  "chapters": [
+    {
+      "ID": 2840227,
+      "title": "title-2840227",
+      "content": "content-2840227",
+      "seq": 78
+    },
+    {
+      "ID": 2840228,
+      "title": "title-2840228",
+      "content": "content-2840228",
+      "seq": 22
+    }
+  ]
+}
+
+
+### Books
+# @name Books_PATCH
+PATCH {{server}}/odata/v4/catalog/Books/16752649
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 16752649,
+  "title": "title-16752649",
+  "price": 4401861.24,
+  "author": {
+    "ID": 23661736
+  },
+  "chapters": [
+    {
+      "ID": 2840227,
+      "title": "title-2840227",
+      "content": "content-2840227",
+      "seq": 78
+    },
+    {
+      "ID": 2840228,
+      "title": "title-2840228",
+      "content": "content-2840228",
+      "seq": 22
+    }
+  ]
+}
+
+
+### Books
+# @name Books_DELETE
+DELETE {{server}}/odata/v4/catalog/Books/16752649
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Authors
+# @name Authors_GET
+GET {{server}}/odata/v4/catalog/Authors
+Authorization: Basic {{username}}:{{password}}
+
+
+### Authors
+# @name Authors_POST
+POST {{server}}/odata/v4/catalog/Authors
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 23661736,
+  "name": "name-23661736",
+  "country": "country-23661736"
+}
+
+
+### Authors
+# @name Authors_PATCH
+PATCH {{server}}/odata/v4/catalog/Authors/23661736
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 23661736,
+  "name": "name-23661736",
+  "country": "country-23661736"
+}
+
+
+### Authors
+# @name Authors_DELETE
+DELETE {{server}}/odata/v4/catalog/Authors/23661736
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Chapters
+# @name Chapters_GET
+GET {{server}}/odata/v4/catalog/Chapters
+Authorization: Basic {{username}}:{{password}}
+
+
+### Chapters
+# @name Chapters_POST
+POST {{server}}/odata/v4/catalog/Chapters
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 2840227,
+  "title": "title-2840227",
+  "content": "content-2840227",
+  "seq": 78
+}
+
+
+### Chapters
+# @name Chapters_PATCH
+PATCH {{server}}/odata/v4/catalog/Chapters/2840227
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 2840227,
+  "title": "title-2840227",
+  "content": "content-2840227",
+  "seq": 78
+}
+
+
+### Chapters
+# @name Chapters_DELETE
+DELETE {{server}}/odata/v4/catalog/Chapters/2840227
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
